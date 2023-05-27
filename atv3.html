@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+input[type="text"] {
+  margin-right: 10px;
+}
+
+label {
+  margin-right: 10px;
+}
+</style>
+</head>
+<body>
+
+<h2>Lista de Pedidos</h2>
+
+<div>
+  <input type="text" id="itemInput" placeholder="Item">
+  <label><input type="radio" name="cores" value="red">Vermelho</label>
+  <label><input type="radio" name="cores" value="blue">Azul</label>
+  <label><input type="radio" name="cores" value="green">Verde</label>
+  <button onclick="addItem()">Adicionar Item</button>
+</div>
+
+<ul id="myList">
+  <li>Juice</li>
+  <li>Coke</li>
+  <li>Rivotril</li>
+</ul>
+
+<script>
+function addItem() {
+  var itemInput = document.getElementById("itemInput");
+  var item = itemInput.value;
+
+  var cor = document.querySelector('input[name="cores"]:checked').value;
+
+  var newItem = document.createElement("li");
+  newItem.textContent = item;
+  newItem.style.color = cor;
+
+  var list = document.getElementById("myList");
+  list.appendChild(newItem);
+
+  itemInput.value = "";
+}
+</script>
+<input type='button' value='Voltar' onclick='history.go(-1)' />
+</body>
+</html>

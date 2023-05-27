@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média de Notas</title>
+</html>
+
+<body>
+    <p>Media: <span id="resMedia"></span></p> <!--onde aparece o resultado da média-->
+    <p>Resultado: <span id="resSit"></span></p> <!--onde aparece situação de aprovado/reprovado-->
+    <script>
+        var notaUm = prompt('Primeira nota: '); //prompt para pegar a primeira rota;
+        var notaDois = prompt('Segunda nota: '); //prompt para pegar a segunda nota;
+
+        var media = (Number(notaUm) + Number(notaDois)) /2; //faz o calulodas das duas notas e pega a média;
+        var resMedia = document.querySelector('#resMedia'); //declara variável do resultado da média;
+        var resSit = document.querySelector('#resSit'); //declarar variávelda situação aprovado/reprovado;
+
+        //SE a média for acima de 6;
+        if(media >= 6){
+            resMedia.innerHTML = media;
+            resSit.style.color = 'blue'; //alterar a cor para azul
+            resSit.innerHTML = 'Aprovado!';
+    }
+   
+        //SE a média for abaixo de 6;
+        else{
+            resMedia.innerHTML = media;
+            resSit.style.color = 'red'; //altera a cor para vermelho;
+            resSit.innerHTML = 'Reprovado!';
+        }
+
+    </script>
+<input type='button' value='Voltar' onclick='history.go(-1)' />
+
+</body>
+</body>
+
+</html>
